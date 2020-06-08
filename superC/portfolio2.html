@@ -1,0 +1,577 @@
+<html>
+    <head>
+
+        <style>
+            body{
+                
+            }
+            main{
+
+                width: 100%;
+                /* height: 60rem; */
+                height: 100%;
+                display: grid;
+                grid-template-rows: repeat(12, 1fr);
+                grid-template-columns: repeat(24, 1fr);  
+                /* overflow: hidden;    */
+                color: white;
+            }
+            nav{
+                grid-column: 5/ span 24;
+                grid-row: 6/ span 2;
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+                margin: 1%;
+                z-index: 2000;
+                grid-gap: 1em;
+
+            }
+            .lineTwo{
+                grid-column: 5/ span 24;
+                grid-row: 7/ span 2;
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+               z-index: 2000;
+               grid-gap: 1em;
+
+            }
+    /* sets css variables */
+            :root{
+                    --activeColumn: 2;
+                    --topWindow: 1;
+                     /* dimensions used to transform the activeP via an animation                     */
+                    --width: 1;
+                    --height: 1;
+                    --top: 1;
+                    --bottom: 1;
+                    --right: 1;
+                    --left: 1;
+                }
+
+            @keyframes transformActiveP{
+                    0%{
+                        opacity: 0;
+                    }
+                    25%{
+                        opacity: 1; 
+                    }
+                    35%{
+                        width: var(--width);
+                        height: var(--height);
+                        top: var(--top);
+                        right: var(--right);
+                        left: var(--left);
+                        bottom: var(--bottom);  
+                        
+                    }
+                    40%{
+                        opacity: 0;
+                    }
+                    100%{
+                        width: var(--width);
+                        height: var(--height);
+                        top: var(--top);
+                        right: var(--right);
+                        left: var(--left);
+                        bottom: var(--bottom);                       
+                       
+                        opacity: 0;
+                    }
+
+                }
+
+                .expanimation{
+                   animation: transformActiveP 2s linear alternate;
+                }
+                
+
+                @keyframes templateAnimation{
+                    0%{
+                       
+                    }
+                    5%{
+                        opacity: 0;
+                    }
+                    35%{
+                        opacity: 0;
+                    }
+                    40%{
+                        opacity: 1;
+                    }
+                    100%{
+                        opacity: 1;
+                    }
+                }
+/* this is the shape placed over the button that expands to make it appear as if the button is expanding */
+                .active{
+                    /* grid-column: span 1;
+                    grid-column-start: 2; */
+                    /* animation: gridIt 2s forwards;    */
+                    z-index: 2000;
+                    position: absolute;
+                    overflow: hidden;
+                }
+ /* the colored filling for the active shape */
+
+                .active p{
+                    /* position: absolute; */
+                    width: 100%;
+                    height: 100%;
+                    /* margin: auto; */
+                    /* margin-top: 5em; */
+                    background-color: yellow;
+                    opacity: 1;
+                    
+                }
+
+/* the container for the template literal/ folio content */
+                article{
+                    grid-column: 1/ span 24;
+                    grid-row: 1/ span 12;
+                    width: 100%;
+                    z-index: 1001;
+                    overflow: hidden;
+                    /* margin-bottom: 5em; */
+                    padding: 5em;
+                    /* opacity: 0; */
+                    background-color: white;
+                    box-sizing: border-box ;
+                    
+                }
+                article figure{
+                    width: 100%;
+                    opacity: 0;
+                }
+    /* the actual content */
+                article img{
+                    width: 100%;
+                    margin: auto;
+                    opacity: 0;
+                    /* position: fixed; */
+                }
+             
+    /* The buttons/ panels that sit inside the grid */
+            .link{
+                /* height: 10em; */
+                /* position: absolute; */
+                /* padding-top: 100%; */
+                background-color: yellow;
+
+                 grid-column: span 1;
+                 grid-row: span 1;
+            }     
+     /* the colored insides start at 80% so they can expand */
+            .link p{
+                /* width: 3em;
+                height: 3em; */
+                /* margin: auto; */
+            }
+
+            /* .link:first-child{
+                background-color: white;
+                opacity: 0;
+            }  
+            .link:last-child{
+                background-color: white;
+                opacity: 0;
+            }     */
+
+            /* animations for the mouseon/ off/ click events */
+           
+            
+
+            @keyframes buttonOnAnimation{
+                0%{
+                    width: 80%;
+                    height: 80%;                   
+                    opacity: 1;
+                }
+                50%{
+                    width: 90%;
+                    height: 90%; 
+                    opacity: 0.9;
+                }
+
+                100%{
+                    width: 85%;
+                    height: 85%;
+                    opacity: 0.95;
+                }
+            } 
+
+            @keyframes buttonClickAnimation{
+                0%{
+                    width: 85%;
+                    height: 85%;                   
+                    
+                }
+                50%{
+                    width: 95%;
+                    height: 95%; 
+                }
+
+                100%{
+                    width: 95%;
+                    height: 95%;
+                }
+            } 
+
+            @keyframes buttonOffAnimation{
+                0%{ 
+                    width: 90%;
+                    height: 90%;
+                    opacity: 1;
+                }
+                55%{
+                    width: 72.5%;
+                    height: 72.5%;
+                    opacity: 0.9;
+                                     
+                }
+                100%{
+                    width: 80%;
+                    height: 80%;
+                    opacity: 0.85;
+                }                
+            }
+
+            @keyframes buttonOffClickAnimation{
+                0%{
+                    width: 80%;
+                    height: 80%;                   
+                    
+                }
+                50%{
+                    width: 90%;
+                    height: 90%; 
+                }
+
+                100%{
+                    width: 85%;
+                    height: 85%;
+                }
+            } 
+
+            @keyframes otherButtonOnAnimation{
+
+                0%{ width: 80%;
+                    height: 80%;
+                }
+                50%{
+                    width: 70%;
+                    height: 70%;
+                }
+
+                100%{
+                    width: 75%;
+                    height: 75%;
+                }                
+            }
+
+            @keyframes otherButtonClickAnimation{
+                0%{ width: 80%;
+                    height: 80%;
+                    
+                }
+                50%{
+                    width: 70%;
+                    height: 70%;
+                }
+
+                100%{
+                    width: 75%;
+                    height: 75%;
+                }                
+            }
+
+            @keyframes otherbuttonOffAnimation{
+                0%{ 
+                    height: 75%;
+                    width: 75%;
+                }
+                50%{
+                    width: 85%;
+                    height: 85%; 
+                                     
+                }
+                100%{
+                    width: 80%;
+                    height: 80%;
+                }                
+            }
+
+            @keyframes otherButtonOffClickAnimation{
+                0%{ width: 80%;
+                    height: 80%;
+                }
+                50%{
+                    width: 70%;
+                    height: 70%;
+                }
+
+                100%{
+                    width: 75%;
+                    height: 75%;
+                }                
+            }
+
+
+           
+        </style>
+    </head>
+<body>
+    <main>
+            <style>
+
+            </style>
+    <!--this grid which sits underneath the main one holds the template and a window to it in the way of a panel  -->
+        <nav>
+            
+           
+            
+            
+            
+        </nav>
+        <article>
+                <a class="active">
+                    <p>
+                        
+                    </p>
+                    
+                </a> 
+        
+           <img class="template" src="images\practice.jpg" alt="">
+        
+        </article>
+        <nav>
+            <style>
+                a{
+                    overflow: hidden;
+
+                }
+                a img{
+                    height: 100%;
+                }
+            </style>
+                <!-- <a class="link"></a> -->
+                <a class="link">
+                    <img src="images\gallOne.jfif" alt="">
+                </a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <!-- <a class="link"></a>            -->
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                <a class="link"><p></p></a>
+                
+            </nav>
+  
+    </main>
+    <!-- <style>
+        article{
+            padding: 0em;
+        }
+    </style> -->
+<script>
+    //create variables from the link buttons
+        let button = document.querySelectorAll('.link');
+        let active = document.querySelector('.active');
+        let activeP = document.querySelector('.active p');
+        let singleButton = document.querySelector('.link');
+    //grab the width of the link/ button/ flex item    
+        let buttonWidth = singleButton.clientWidth;
+    //create a variable with the content (colored p container) of the    
+        let buttonP = document.querySelectorAll(".link p");
+        let article = document.querySelector("article");
+        let template = document.querySelector(".template");
+        let filtered;
+//loop through buttons and ensure their height is the same as their width
+       
+  
+        button.forEach(element => {
+            element.style.height = buttonWidth;
+        });
+            active.style.height = buttonWidth;
+
+    //cycles though nodelist, filters out the target element
+    //! To apply an array method to a node list we had to use the array.from method
+    //- we could also have used the [...buttonP] to build an array from the list (destructuring?)  
+    
+     filtered = (on) => Array.from(buttonP).filter((butt) => {
+                return butt != on;
+            }); 
+    
+
+    
+         
+
+    //This builds animations, leaving paramaters for the event and the actual animation 
+    const buttonAnimations = (a, b, c) =>{
+
+        //leave incase we need seperate states
+
+        //animates button on mouseover/ click etcetc- change the width of target   
+          c.style.animation = a + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
+           
+        //calls filter function using 'this' to allow a local variable to be built
+           filteredButtons = filtered(c);
+          
+        //apply chosen animation to each filtered element
+           filteredButtons.forEach(element =>{
+               element.style.animation = b  + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
+           }); 
+        //attaches animation to the activePanel to be triggered by the same event as the target
+           activeP.style.animation = a  + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
+        }
+
+        //builds a variable out of the html root- allows us to target css vars...
+        let root = document.querySelector(':root');
+       
+ //finds the coords of the target element and sets the activePanel up with the same
+ //the paramater will have "this" fed into it- in this case this will be the element being targeted (mouseovered)    
+    const activePLocation = (a) => {
+
+    // find the styles of the selected element- namely the position
+    
+    // temp solution--- get the column position by checking the elements inex in the nodelist/ array
+         //let location = Array.from(buttonP).indexOf(a);
+
+    //gets height and width of element    
+         let activeHeight = window.getComputedStyle(a).getPropertyValue("height");
+         let activeWidth = window.getComputedStyle(a).getPropertyValue("width");
+    //gets absolute position coords of target element and sets them as a var (we need to do it this way because the above version doesn't like the grid)    
+         let activeLocation = a.getBoundingClientRect();
+    //sets variables for the top and left coords     
+         let activeLEFT = activeLocation.left;
+         let activeTOP =  activeLocation.top;
+        
+        active.style.width= activeWidth;        
+        active.style.height= activeHeight;
+        active.style.left= activeLEFT;
+        active.style.top= activeTOP;
+        
+    }
+
+
+
+    //this animation/ transition finds the articles dimensions and expands active p to interact with it
+    const activeExpand = () =>{
+    //finding the articles dimensions in relation to the window    
+        let articleLocation = article.getBoundingClientRect();
+        let articleLeft = articleLocation.left;
+        let articleTop = articleLocation.top;
+        let articleBottom = articleLocation.bottom;
+        let articleRight = articleLocation.right;
+        let articleWidth = window.getComputedStyle(article).getPropertyValue("width");
+        let articleHeight = window.getComputedStyle(article).getPropertyValue("height");
+       
+        
+        active.classList.add("expanimation");
+
+
+        //this margin works to counter the padding on the article and ensure the whole thing lines up
+        // active.style.margin= 0 + "em";
+        
+        // active.style.marginBottom= 4.2 + "em";
+        // active.style.marginTop= 4.2 + "em";
+        active.style.margin = "0 auto";
+        active.style.padding = "0 auto";
+
+        
+        //sets CSS variables to feed coords into animation---the origin will not stay the same though
+        document.documentElement.style.setProperty('--width', articleWidth);
+        document.documentElement.style.setProperty('--height', articleHeight);
+        document.documentElement.style.setProperty('--top', articleTop);
+        document.documentElement.style.setProperty('--bottom', articleBottom);
+        document.documentElement.style.setProperty('--right', articleRight);    
+
+        active.style.animation='transformActiveP 1.2s cubic-bezier(0,0,0.58, 1) alternate';
+        template.style.animation='templateAnimation 1.2s cubic-bezier(0,0,0.58, 1) forwards';
+        //changes opacity of the template to 1 on the same timeframe as the animation
+        
+}
+
+
+
+     
+     active.addEventListener("animationend", function(a){
+         active.classList.remove("expanimation");
+        //  active.removeAttribute("height");
+    });
+
+
+ const reset = (a) =>{
+        console.log(active);
+         active.removeAttribute("style");
+        //   active.style.left=  50 + "px";
+        //   active.style.height= 50 + "px";
+        //   active.style.opacity= 1;
+        }
+
+
+
+
+//animating events allows us to attach events to elements and trigger relevant animations/ http requests
+
+const buildEvents = (a, b, c, d, e) => {
+
+    //cycle through each button/ panel and attach events, animations and http requests to them
+
+    buttonP.forEach(element =>{
+
+        //add chosen event listener to element/ button
+
+        element.addEventListener(a, function(){
+
+        //calling the buttonAnimations here attaches relevant animations to the relevant events   -- a =       
+        
+        buttonAnimations(b, c, this);
+
+
+        //sets location of activeP and expands it depending on the argument- which is dictated by the event
+        d(this);
+
+        setTimeout(reset, 1000);
+
+
+        });
+    });
+    
+}     
+
+            
+//calling build events allows us to attach the relevant animations and http requests to the relevant buttons
+
+//mouse enter expands active element and shrinks the others, it also sets the activePanels locarion
+buildEvents("mouseenter", "buttonOnAnimation", "otherButtonOnAnimation", activePLocation);
+//mouse leave shrinks active element and expands others
+buildEvents("mouseleave", "buttonOffAnimation", "otherbuttonOffAnimation");
+buildEvents("mousedown", "buttonClickAnimation", "otherButtonClickAnimation", activeExpand);
+//mouse up is supposed to ake them all go in again
+buildEvents("onmouseup", "buttonOffClickAnimation", "otherButtonOffClickAnimation");
+
+
+
+
+
+
+
+
+        
+
+
+    
+
+
+        
+    </script>
+</body>
+</html>

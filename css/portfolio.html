@@ -1,0 +1,292 @@
+<html>
+    <head>
+        <style>
+            body{
+                
+            }
+            main{
+
+                width: 100%;
+                display: grid;
+                grid-template-rows: repeat(6, 1fr);
+                grid-template-columns: repeat(24, 1fr);                
+            }
+            nav{
+                
+                grid-column: 1/ span 24;
+                display: flex;
+                grid-row: 2/ span 1;
+                margin: 1%;
+                
+            }
+           .link{
+
+                flex: 1;
+                /* height: 10em; */
+                /* position: absolute; */
+                height: 100%;
+                margin: 1%;
+                width: 100%
+            }     
+
+            .link p{
+                background-color: yellow;
+                width: 80%;
+                height: 80%;
+                margin: auto;
+            }
+
+            .link:first-child{
+                background-color: white;
+            }  
+            .link:last-child{
+                background-color: white;
+            }    
+            .link:hover{
+
+            }  
+            /* animations for the mouseon/ off events */
+            /* buttonOn hover/ buttonOnClick */
+            @keyframes buttonOnAnimation{
+                0%{
+                    width: 80%;
+                    height: 80%;                   
+                    
+                }
+                50%{
+                    width: 90%;
+                    height: 90%; 
+                }
+
+                100%{
+                    width: 85%;
+                    height: 85%;
+                }
+            } 
+
+            @keyframes buttonClickAnimation{
+                0%{
+                    width: 85%;
+                    height: 85%;                   
+                    
+                }
+                50%{
+                    width: 95%;
+                    height: 95%; 
+                }
+
+                100%{
+                    width: 90%;
+                    height: 90%;
+                }
+            } 
+
+            @keyframes buttonOffAnimation{
+                0%{ 
+                    width: 82.5%;
+                    height: 82.5%;
+                }
+                55%{
+                    width: 72.5%;
+                    height: 72.5%;
+                                     
+                }
+                100%{
+                    width: 80%;
+                    height: 80%;
+                }                
+            }
+
+            @keyframes buttonOffClickAnimation{
+                0%{
+                    width: 80%;
+                    height: 80%;                   
+                    
+                }
+                50%{
+                    width: 90%;
+                    height: 90%; 
+                }
+
+                100%{
+                    width: 85%;
+                    height: 85%;
+                }
+            } 
+
+            @keyframes otherButtonOnAnimation{
+                0%{ width: 80%;
+                    height: 80%;
+                }
+                50%{
+                    width: 70%;
+                    height: 70%;
+                }
+
+                100%{
+                    width: 75%;
+                    height: 75%;
+                }                
+            }
+
+            @keyframes otherButtonClickAnimation{
+                0%{ width: 80%;
+                    height: 80%;
+                }
+                50%{
+                    width: 70%;
+                    height: 70%;
+                }
+
+                100%{
+                    width: 75%;
+                    height: 75%;
+                }                
+            }
+
+            @keyframes otherbuttonOffAnimation{
+                0%{ 
+                    height: 75%;
+                    width: 75%;
+                }
+                50%{
+                    width: 85%;
+                    height: 85%; 
+                                     
+                }
+                100%{
+                    width: 80%;
+                    height: 80%;
+                }                
+            }
+
+            @keyframes otherButtonOffClickAnimation{
+                0%{ width: 80%;
+                    height: 80%;
+                }
+                50%{
+                    width: 70%;
+                    height: 70%;
+                }
+
+                100%{
+                    width: 75%;
+                    height: 75%;
+                }                
+            }
+
+
+           
+        </style>
+    </head>
+<body>
+    <main>
+
+        <nav>
+            <a class="link"></a>
+            <a class="link"><p></p></a>
+            <a class="link"><p></p></a>
+            <a class="link"><p></p></a>
+            <a class="link"><p></p></a>
+            <a class="link"><p></p></a>
+            <a class="link"><p></p></a>
+            <a class="link"></a>           
+            
+        </nav>
+    </main>
+<script>
+    //create variables from the link buttons
+        let button = document.querySelectorAll('.link');
+        let singleButton = document.querySelector('.link');
+    //grab the width of the link/ button/ flex item    
+        let buttonWidth = singleButton.clientWidth;
+    //create a variable with the content (colored p container) of the    
+        let buttonP = document.querySelectorAll(".link p");
+
+//loop through buttons and ensure their height is the same as their width
+        button.forEach(element => {
+            element.style.height = buttonWidth;
+        });
+
+    //cycles though nodelist, filters out the active element
+    //! To apply an array method to a node list we had to use the array.from method
+    //- we could also have used the [...buttonP] to build an array from the list (destructuring?)  
+    
+    const filtered = (on) => Array.from(buttonP).filter((butt) => {
+                return butt != on;
+            });          
+
+    //This builds animations and 
+    const buttonAnimations = (a, b, c) =>{
+
+
+        // if (c.classList.contains("active")){
+                
+               
+        //     } else if(c.classList.contains("inActive")){
+                   
+        // }
+
+        
+        //animates button on mouseover- change the width of target   
+          c.style.animation = a + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
+           
+        //call filter function using 'this' and asign variable
+           filteredButtons = filtered(c);
+          
+           //apply chosen animation to each filtered element
+           filteredButtons.forEach(element =>{
+               element.style.animation = b  + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
+           }); 
+ }
+
+
+//animating events allows us to attach events to elements and trigger relevant animations/ http requests
+
+const buildEvents = (a, b, c) => {
+
+    //cycle through each button/ panel and attach events, animations and http requests to them
+
+    buttonP.forEach(element =>{
+
+        //add chosen event listener to element/ button
+
+        element.addEventListener(a, function(){
+            if(this.classList.contains('active')){
+                alert("active!");
+            }
+        //calling the buttonAnimations here attaches relevant animations to the relevant events         
+        
+        buttonAnimations(b, c, this);
+        
+        });
+    });
+}     
+
+            
+//calling build events allows us to attach the relevant animations and http requests to the relevant buttons
+
+//mouse enter expands active element and shrinks the others
+buildEvents("mouseenter", "buttonOnAnimation", "otherButtonOnAnimation");
+//mouse leave shrinks active element and expands others
+buildEvents("mouseleave", "buttonOffAnimation", "otherbuttonOffAnimation");
+buildEvents("mousedown", "buttonClickAnimation", "otherButtonClickAnimation");
+
+
+
+
+
+
+
+
+
+        
+
+
+    
+
+
+        
+    </script>
+</body>
+</html>

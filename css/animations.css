@@ -1,0 +1,33 @@
+@keyframes onHov {
+  0%{
+      margin: 0.5em
+  }
+  75%{
+      margin: 0.85em
+  }
+  100%{
+      margin: 0.75em
+  }
+}
+
+@keyframes offHov {
+    0%{
+        margin: 0.75em
+    }
+    100%{
+        margin: 0.5em
+    }
+
+}
+
+@keyframes onHovOther{
+    0%{
+        margin: 0.5em
+    }
+    75%{
+        margin: 0.35em
+    }
+    100%{
+        margin: 0.5em
+    }    
+}
