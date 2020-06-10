@@ -1,33 +1,185 @@
-@keyframes onHov {
-  0%{
-      margin: 0.5em
-  }
-  75%{
-      margin: 0.85em
-  }
-  100%{
-      margin: 0.75em
-  }
-}
+/* animations for the dropdown menu */
 
-@keyframes offHov {
+@keyframes iconOpen{
     0%{
-        margin: 0.75em
+        opacity: 0.45;
     }
     100%{
-        margin: 0.5em
+        opacity: 0.9;
     }
-
 }
-
-@keyframes onHovOther{
+@keyframes iconClose{
     0%{
-        margin: 0.5em
-    }
-    75%{
-        margin: 0.35em
+        opacity: 0.9;
+  }
+    100%{
+        opacity: 0.45;
+    }   
+}
+@keyframes menuTextOpen{
+    0%{
+        height: 0;
+        opacity: 0;
+        margin-top: 0;
     }
     100%{
-        margin: 0.5em
-    }    
+        height: 2em;
+        opacity: 1;
+        margin-top: 0.5em;  
+    }
 }
+  @keyframes menuTextClose{
+    0%{
+        height: 2em;
+        opacity: 0.9;
+        margin-top: 0.5em;
+    }
+    100%{
+        height: 0;
+        opacity: 0;
+        margin-top: 0;  
+    }
+}
+@keyframes menuOpen{
+      0%{
+          height: 0em;
+          background-color: white;
+        }
+      100%{
+          height: 9em;
+          background-color: var(--iconBar);                    
+        } 
+    }
+  @keyframes menuClose{
+      0%{
+          height: 9em;
+          background-color: var(--iconBar);                    
+        }
+      100%{
+          height: 0em;
+          background-color: white;
+        } 
+  }
+  
+/* animations for squares */
+
+@keyframes hoverThis{
+    0%{ width: 85%;
+        height: 85%;
+    }
+    50%{
+        width: 95%;
+        height: 95%;
+    }
+
+    100%{
+        width: 85%;
+        height: 85%;
+    }                
+}
+@keyframes hoverOffThis{
+    0%{ 
+        width: 85%;
+        height: 85%;
+    }
+    55%{
+        width: 75%;
+        height: 75%;
+                         
+    }
+    100%{
+        width: 85%;
+        height: 85%;
+    }                
+}
+@keyframes hoverThem{
+    0%{ width: 85%;
+        height: 85%;
+    }
+    50%{
+        width: 75%;
+        height: 75%;
+    }
+
+    100%{
+        width: 85%;
+        height: 85%;
+    }                
+}
+@keyframes hoverOffThem{
+    0%{ width: 85%;
+        height: 85%;
+    }
+    50%{
+        width: 95%;
+        height: 95%;
+    }
+    100%{
+        width: 85%;
+        height: 85%;
+    }     
+}
+/* SHOULD THE FIRST 50% BE A 5? */
+@keyframes clickThisAnimation {
+    0%{
+        width: 85%;
+        height: 85%;
+    }
+    50%{
+        width: 95%;
+        height: 95%;
+    }
+    50%{
+        width: 75%;
+        height: 75%;
+        opacity: 1;
+    }
+   100%{
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        opacity: 0;
+        transform: scale(7.5);
+        position: fixed;
+    }
+}
+@keyframes clickThemAnimation {
+
+    0%{
+        width: 85%;
+        height: 85%;
+    }
+    50%{
+        width: 95%;
+        height: 95%;
+    }
+    100%{
+        width: 25%;
+        height: 25%;
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+@keyframes indexPageLoadAll {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes projectPageLoad {
+    
+}
+@keyframes projectPageLeave{
+
+}
+
+/* remember snap scroll and glow on product page */
+
+
+
+
+
+

@@ -1,0 +1,98 @@
+:root{
+    --squareWidth: 0;
+    --mainWidth: 0;
+    --icon: rgb(66, 94, 104);
+    --iconBar: rgb(228, 235, 237, 0.4);
+}
+body{
+    color: white;
+    text-align: center;
+    overflow: scroll;
+    margin: auto;
+    grid-template-rows: repeat(6, 1fr);
+    margin-top: 1em;;
+}
+/* javascript is helping keep the grid- and so the squares on proportion on resizing */
+/* it changes the css variable holding the  contents width as the screen size changes*/
+#content{
+    display: grid;
+    width: 75%;
+    margin: 0 auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1em;
+    background-color: white;
+    text-align: center;
+}
+header{
+    z-index: 1000;
+    height: 15%;
+    width: 75%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    /* position: absolute; */
+    /* grid-column: 1/ span 6; */
+    vertical-align: text-bottom;
+}
+h1{
+    color: black;
+    font-size: 2.5em;
+    grid-column: 1/ span 3;
+    margin: 0em;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+}
+/* the navigation menu has a dropdown and a block version (do we really need both?) */
+nav{
+    font-family: 'DM Mono', monospace;
+    font-size: 2em;
+    text-align: end;
+    padding-top: 2.5%;
+    padding-right: 0.75em;
+    text-decoration: none;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+#downMenu{
+    display: none;
+}
+#regular{
+    display: flex;
+    flex-direction: row;
+    grid-auto-flow: row;
+    grid-column-end: 7;
+    text-align: end;
+}
+#regular a{
+    margin-left: 1em;
+}
+/* the yellow squares are controlling the size of the grid (draw again with flex!) */
+.yellowSquare{
+    padding: 0;
+    border: none;
+    margin: 0;
+    height: var(--squareWidth);
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    align-content: center;
+}
+.backGround{
+    width: 85%;
+    height: 85%;
+    background-color: rgb(240, 214, 50);
+    border: none;
+    margin: auto;
+    overflow: hidden;
+}
+/* .backGround:hover{
+    animation: hoverThis 1s;
+    DELETE THIS?
+} */
+img{
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+}
