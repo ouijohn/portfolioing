@@ -6,7 +6,7 @@ let grid = document.getElementById('content');
 let bod = document.querySelector('body');
 let as = document.querySelectorAll('.yellowSquare');
 let main = document.querySelector('main');
-let header = document.querySelector('header');
+// let header = document.querySelector('header');
 
 measure();
 resize();
@@ -90,36 +90,6 @@ buildEvents("mouseenter", "hoverThis", "hoverThem");
 //mouse leave shrinks active element and expands others
 buildEvents("mouseleave", "hoverOffThis", "hoverOffThem");
 buildEvents("mousedown", "clickThisAnimation", "clickThemAnimation");
-
-//THIS TARGETS AND ATTACHES ANIMATIONS TO THE DROPDOWN MENU
-const downer = document.querySelector('.downer');
-const downIcon = document.querySelector('.downer a')
-const menuText = document.querySelectorAll('#downMenuText a');
-const menuBckgrnd = document.querySelector('#downMenu');
-
-downer.addEventListener('click', function(){
-    if(downer.classList.contains('open')){
-        dropMenu('Close');
-        downer.classList.remove('open');
-    }else{
-        dropMenu('Open');
-        downer.classList.add('open');
-    }
-
-});
-const dropMenu=(a)=>{
-    console.log(a);
-        downIcon.style.animation = `icon${a} 1s forwards`
-        menuBckgrnd.style.animation =  `menu${a} 1s forwards`;
-        menuText.forEach((b)=>{
-            b.style.animation= `menuText${a} 1s forwards`;
-    }); 
-}
-
-
-//ajax request
-
-
 
 
 

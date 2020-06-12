@@ -1,48 +1,17 @@
 <html>
     <head>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
-        <meta name='viewport' content='width=device-width, initial-scale=1'>
-        <link rel='stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-        <link rel='stylesheet' href='css\animations.css'>
-        <link rel='stylesheet' href='css\styles.css'>
-        <link rel='stylesheet' href='css\mediaQueries.css'>
+
+        
+   
+        
     </head>
     <body>
     <header></header>
         
 
-<script>
-           const nut = document.querySelector('head');
-        //     nut.innerHTML='ekjdnckjkjncjkn';
-            const header = document.querySelector('header');
-        //     header.innerHTML='ldmklmedkekdkjjkn';
-class getInfo{
-    async get(url){
-        const response = await fetch(url);
-        const resData = await response.json();
-        // console.log(resData);
-        return resData;
-    }
-}
+    
 
-const fetchHeader=(function(){
-    const http = new getInfo;
-    let heads;
-    let headGetter = http.get('bits/header.json')
-        .then(data => data)
-        .then(data => heads = data)
-        .then(data => attachHeader(heads))
-        .then(data => heads)
-        .catch(err => console.log('rejected', err));
-});
-
-const attachHeader =(e)=>{
-    // attachThis = JSON.parse(e);
-    console.log(e[0].testHeader);
-    header.innerHTML= e[0].header;
-}
-fetchHeader();
-        </script>
-
+        <script src="js\headsUp.js"></script>
+        <script src="js\portfolio.js"></script>
     </body>
 </html>
