@@ -1,1 +1,74 @@
-<script>`${documentBits}`</script>
+<html>
+    <head>
+
+        
+<style> 
+
+
+   </style>
+        <!-- TRY APPENDING THE LINKS USING FOReACH-> GET RID OF THE COMMAS -->
+    </head>
+    <body>
+    <header></header>
+        
+        <section id="project">
+
+            <section class="rows">
+                <figure class='sectOne'>
+                    
+                </figure>
+                <figcaption class="sectTwo">
+                    <p class="introduction">
+
+                    </p>
+                </figcaption>
+            </section>
+            <section class="rows">
+                <figcaption class="sectTwo">
+                    <p>
+                    </p>
+                </figcaption>
+                <figure class='sectOne'>
+                    
+                </figure>
+            </section>
+            <section class="rows">
+                <figure class='sectOne'>
+                </figure>
+            </section>
+            <section class="rows">
+                <figcaption class="sectTwo">
+                    <p>
+                    </p>
+                </figcaption>
+            </section>
+
+            
+
+
+        </section>
+    
+
+        <script src="js\headsUp.js"></script>
+        <script>
+        //GET/ FETCH PROJECT JSON, PUT THE OBJECT NAME IN THE INNERHTML IN TEMP LITS THEN STICK IN THE LOCAL STORAGE NUMBER!  
+                let root = document.documentElement;
+                let rowRow = document.querySelectorAll('.rows')
+
+            setTimeout(()=>{
+                let headLess =  header.getBoundingClientRect().height;
+                let scrollCont = document.querySelector('#content')
+                let sectHeight = window.innerHeight  - headLess;
+                
+                console.log(sectHeight);
+
+                root.style.setProperty('--productHeight', sectHeight)
+
+                let prjctNmbr = localStorage.getItem("projectNmbr")
+
+            }, 100)
+
+        </script>
+        <!-- <script src="js\portfolio.js"></script> -->
+    </body>
+</html>

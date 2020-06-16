@@ -1,15 +1,22 @@
+<head>
+  <style>
+      
+  </style>  
 </head>
 <body>
 <header></header>
         <main id=content>
 
-            <a class="yellowSquare">
+            <a class="yellowSquare" href="projectPage.html">
                 <div class="backGround">
                     <img src="images\gallOne.jfif" alt="">
                 </div>
             </a>
-            <a class="yellowSquare ">
-                <div class="backGround "></div>
+            <a class="yellowSquare" href="projectPage.html">
+                <div class="backGround ">
+                    <img src="images\fretBoard.jpg" alt="">
+
+                </div>
             </a>            <a class="yellowSquare">
                 <div class="backGround"></div>
             </a>            <a class="yellowSquare">
@@ -55,7 +62,23 @@
                 <div class="backGround"></div>
             </a>
     </main>
-    <script src="js\headsUp.js"></script>
     <script src="js\portfolio.js"></script>
+
+
+    <script src="js\headsUp.js"></script>
+    <script>
+        let yebutts = document.querySelectorAll('.yellowSquare')
+        let current;
+        yebutts.forEach(function(a, index){
+            a.addEventListener('click', function(){
+            console.log(index);
+            current = index;
+            localStorage.setItem('projectNmbr', index)
+            console.log(localStorage.getItem('projectNmbr'))
+        });
+        })
+
+
+    </script>
     </body>
 </html>

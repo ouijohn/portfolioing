@@ -6,6 +6,7 @@ const header = document.querySelector('header');
     //     header.innerHTML='ldmklmedkekdkjjkn';
 class getInfo{
 async get(url){
+    
     const response = await fetch(url);
     const resData = await response.json();
     // console.log(resData);
@@ -30,18 +31,23 @@ let headGetter = http.get('bits/header.json')
 });
 
 const addHDocHead =(a)=>{
-    console.log(a);
+    
+    console.log(document.querySelector('head').childNodes[0]);
     let headCont = `${a}`
-    document.querySelector('head').innerHTML=headCont;
+    // document.querySelector('head').innerHTML=headCont;
+    document.querySelector('head').insertBefore(headCont, document.querySelector('head').childNodes[0]);
+    
 }
 
 const attachHeader =(e)=>{
+    
 // let attachThis = JSON.parse(e);
 let docHeadData = e[0].documentHead;
 console.log(docHeadData);
 docHead.innerHTML = `${docHeadData}`;
 
 header.innerHTML= e[0].header;
+
 setTimeout(()=>{
     buildHeaderEvents();
 

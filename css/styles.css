@@ -3,14 +3,16 @@
     --mainWidth: 0;
     --icon: rgb(66, 94, 104);
     --iconBar: rgb(228, 235, 237, 0.4);
+    --productHeight: 0;
 }
 body{
     color: white;
     text-align: center;
-    overflow: scroll;
+    /* overflow: scroll; */
     margin: auto;
     grid-template-rows: repeat(6, 1fr);
-    margin-top: 1em;;
+    margin-top: 1em;
+
 }
 /* javascript is helping keep the grid- and so the squares on proportion on resizing */
 /* it changes the css variable holding the  contents width as the screen size changes*/
@@ -22,8 +24,12 @@ body{
     grid-gap: 1em;
     background-color: white;
     text-align: center;
+    /* scroll-snap-type: y proximity;
+    overflow-y: scroll; */
 }
 header{
+    position: sticky;
+    top: 0;
     z-index: 1000;
     height: 15%;
     width: 75%;
@@ -91,8 +97,56 @@ nav a{
     animation: hoverThis 1s;
     DELETE THIS?
 } */
-img{
+.yellowSquare img{
     height: 100%;
     width: 100%;
     opacity: 0.1;
+} 
+#project{
+    display: grid;
+    width: 75%;
+    margin: 0 auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1em;
+    background-color: white;
+    text-align: center;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
+.rows{
+    grid-column: 1/ span 6;
+    display: flex;
+    flex-direction: row;
+    /* height: 100vh; */
+    height: var(--productHeight);
+    scroll-snap-align: end;
+    margin-bottom: 10em;
+}
+
+.sectOne{
+    flex: 1;
+    margin: 0;
+    /* margin-top: 15%; */
+} 
+.sectOne img{
+    width: 100%;
+}
+.sectTwo{
+    flex: 1;
+    /* margin-top: 15%; */
+}
+.sectTwo p{
+    color: black;
+    font-size: 2em;
+    margin: 0em;
+    margin-left: 1em;
+    text-align: left;
+    font-family: 'DM Mono', monospace;
+}
+.bigImage{
+    height: 100%;
+}
+
+
+
+

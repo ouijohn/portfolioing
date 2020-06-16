@@ -1,6 +1,9 @@
 
 //THIS MEASURES THE HEIGHT/ WIDTH THAT AN EVEN SHAPED SQUARE GRID SHOULD BE AS IT IS RESIZED, SETS A CSS VAR TO THIS AND APPLIES IT TO THE BUTTON BACKGROUND
 //ENSURING THAT THE ASPECT RATIO OF THE BUTTONS AND OF THE GRID AND IMAGES REMAIN THE SAME REGARDLES OF THE SCREEN SIZE/ SHAPE
+
+//PUSH TO ORIGIN!!!
+
 let height = 0;
 let grid = document.getElementById('content');
 let bod = document.querySelector('body');
@@ -10,7 +13,6 @@ let main = document.querySelector('main');
 
 measure();
 resize();
-
 function measure(){
     aHeight = as[0].getBoundingClientRect().width;
     gridHeight = grid.getBoundingClientRect().width;
@@ -33,6 +35,17 @@ window.addEventListener('resize', function(){
         measure();
         resize();
         console.log(height)
+});
+
+window.addEventListener('load', function(){
+    this.setTimeout(()=>{
+
+        measure();
+        resize();
+    },100)
+
+    console.log(height)
+
 });
 
 
@@ -90,6 +103,7 @@ buildEvents("mouseenter", "hoverThis", "hoverThem");
 //mouse leave shrinks active element and expands others
 buildEvents("mouseleave", "hoverOffThis", "hoverOffThem");
 buildEvents("mousedown", "clickThisAnimation", "clickThemAnimation");
+
 
 
 
