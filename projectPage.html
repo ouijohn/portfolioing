@@ -2,8 +2,10 @@
     <head>
 
         
-<style> 
-
+    <style> 
+        .sectTwo{
+            display: none;
+        }
 
    </style>
         <!-- TRY APPENDING THE LINKS USING FOReACH-> GET RID OF THE COMMAS -->
@@ -15,7 +17,7 @@
 
             <section class="rows">
                 <figure class='sectOne'>
-                    
+                    <img src="" alt="">
                 </figure>
                 <figcaption class="sectTwo">
                     <p class="introduction">
@@ -54,19 +56,36 @@
         //GET/ FETCH PROJECT JSON, PUT THE OBJECT NAME IN THE INNERHTML IN TEMP LITS THEN STICK IN THE LOCAL STORAGE NUMBER!  
                 let root = document.documentElement;
                 let rowRow = document.querySelectorAll('.rows')
+                let prjctNmbr = 0;
 
             setTimeout(()=>{
                 let headLess =  header.getBoundingClientRect().height;
                 let scrollCont = document.querySelector('#content')
                 let sectHeight = window.innerHeight  - headLess;
-                
                 console.log(sectHeight);
-
                 root.style.setProperty('--productHeight', sectHeight)
-
-                let prjctNmbr = localStorage.getItem("projectNmbr")
-
+                fetchProjects();
             }, 100)
+
+            attachProjects = (a)=>{
+                
+                document.querySelector('.sectOne').innerHTML=`<img src="${a.image1}" alt="">`;
+                document.querySelector('.sectTwo p').innerHTML= ` ${a.introduction}`;
+                console.log(a.introduction);
+            };
+
+            const fetchProjects=(function(){
+            let prjctNmbr = localStorage.getItem("projectNmbr")
+            const http = new getInfo;
+            let projects;
+            let docHead;
+            let projectGetter = http.get('bits/projects.json')
+                .then(data => data)
+                .then(data => projects = data)
+                .then(data => attachProjects(projects[prjctNmbr]))
+            });
+
+
 
         </script>
         <!-- <script src="js\portfolio.js"></script> -->

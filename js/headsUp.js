@@ -35,7 +35,7 @@ const addHDocHead =(a)=>{
     console.log(document.querySelector('head').childNodes[0]);
     let headCont = `${a}`
     // document.querySelector('head').innerHTML=headCont;
-    document.querySelector('head').insertBefore(headCont, document.querySelector('head').childNodes[0]);
+    document.querySelector('head').insertBefore(headCont, document.querySelector('head').childNodes[1]);
     
 }
 
