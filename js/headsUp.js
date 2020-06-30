@@ -1,58 +1,35 @@
-//ajax request
-const docHead = document.querySelector('head');
+
+
+
+
+//fetch info for head and header, target the bits and stick the data in
+const  head = document.querySelector('head');
 const header = document.querySelector('header');
-    //     nut.innerHTML='ekjdnckjkjncjkn';
-        // const header = document.querySelector('header');
-    //     header.innerHTML='ldmklmedkekdkjjkn';
-class getInfo{
-async get(url){
+
+const getBits=()=>{
+
     
-    const response = await fetch(url);
-    const resData = await response.json();
-    // console.log(resData);
-    return resData;
-}
-}
-//THISTHISHTIHEREHEREHERE
-
-
-
-
-
-
-const fetchHeader=(function(){
-const http = new getInfo;
-let heads;
-let docHead;
-let headGetter = http.get('bits/header.json')
-    .then(data => data)
-    .then(data => heads = data)
-    .then(data => attachHeader(heads))
-});
-
-const addHDocHead =(a)=>{
+    const useBits =(a, b)=>{
+        fetch(a)
+        .then(response=>{
+            return response.text()
+        })
+        .then(data =>{
+            b.innerHTML=data;
+        })
+    }
     
-    console.log(document.querySelector('head').childNodes[0]);
-    let headCont = `${a}`
-    // document.querySelector('head').innerHTML=headCont;
-    document.querySelector('head').insertBefore(headCont, document.querySelector('head').childNodes[1]);
-    
+    useBits("dropDown.html", header);
+    useBits("head.html", head);
+
+    setTimeout(()=>{
+        buildHeaderEvents();
+    }, 200)
 }
 
-const attachHeader =(e)=>{
-    
-// let attachThis = JSON.parse(e);
-let docHeadData = e[0].documentHead;
-console.log(docHeadData);
-docHead.innerHTML = `${docHeadData}`;
+getBits();
 
-header.innerHTML= e[0].header;
-
-setTimeout(()=>{
-    buildHeaderEvents();
-
-},1000)
-}
+//add functionality to dropdown menu
 
 const buildHeaderEvents=()=>{
 const downer = document.querySelector('.downer');
@@ -80,4 +57,3 @@ console.log(a);
 }
 }
 
-fetchHeader();

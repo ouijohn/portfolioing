@@ -108,7 +108,7 @@ nav a{
     margin: 0 auto;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 1em;
-    background-color: white;
+    /* background-color: white; */
     text-align: center;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;

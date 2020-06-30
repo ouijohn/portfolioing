@@ -2,15 +2,11 @@
     <head>
 
         
-    <style> 
-        .sectTwo{
-            display: none;
-        }
 
-   </style>
         <!-- TRY APPENDING THE LINKS USING FOReACH-> GET RID OF THE COMMAS -->
     </head>
     <body>
+    <div id="bigYellowSquare"></div>
     <header></header>
         
         <section id="project">
@@ -51,13 +47,25 @@
         </section>
     
 
+        
+
         <script src="js\headsUp.js"></script>
         <script>
-        //GET/ FETCH PROJECT JSON, PUT THE OBJECT NAME IN THE INNERHTML IN TEMP LITS THEN STICK IN THE LOCAL STORAGE NUMBER!  
+
+        //sort dropdown- make it less opaque- get rid of white bar at top
+        //create opening animation! (boxes fade in the images appear)
+        //stop images flashing up on index load
+        //think of a way to stop the images becomeing all horrible and fuzzy as yo  
+        //GET/ FETCH PROJECT JSON !!!
+        //PUT THE OBJECT NAME IN THE INNERHTML IN TEMP LITS THEN STICK IN THE LOCAL STORAGE NUMBER! 
+        //THE ABOVE WILL HELP US KNOW WHICH PROJECT TO FETCH!
+        //have a look at revealing module and how to maybe apply it to this
+        //form + about page
+        //tidy up 
+
                 let root = document.documentElement;
                 let rowRow = document.querySelectorAll('.rows')
                 let prjctNmbr = 0;
-
             setTimeout(()=>{
                 let headLess =  header.getBoundingClientRect().height;
                 let scrollCont = document.querySelector('#content')
@@ -73,6 +81,15 @@
                 document.querySelector('.sectTwo p').innerHTML= ` ${a.introduction}`;
                 console.log(a.introduction);
             };
+            class getInfo{
+                async get(url){
+                    const response = await fetch(url);
+                    const resData = await response.json();
+                    return resData;
+                }
+
+                }
+            
 
             const fetchProjects=(function(){
             let prjctNmbr = localStorage.getItem("projectNmbr")
@@ -90,4 +107,42 @@
         </script>
         <!-- <script src="js\portfolio.js"></script> -->
     </body>
+    <style> 
+        #bigYellowSquare{
+            background-color: rgb(240, 214, 50);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            opacity: 1;
+            margin: 0;
+            top: 0;
+            animation: bigYellowStarter 1s forwards;
+        }
+        #project{
+            
+            opacity: 0;
+            animation: openProject 1s forwards;
+        }
+        @keyframes bigYellowStarter {
+            1%{
+                opacity: 1;
+               
+            }
+            100%{
+                opacity: 0;
+                /* transform: scale(0); */
+            }
+        }
+        @keyframes openProject {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+
+        }
+        
+
+   </style>
 </html>
