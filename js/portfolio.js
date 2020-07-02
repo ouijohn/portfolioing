@@ -3,13 +3,15 @@
 //ENSURING THAT THE ASPECT RATIO OF THE BUTTONS AND OF THE GRID AND IMAGES REMAIN THE SAME REGARDLES OF THE SCREEN SIZE/ SHAPE
 
 //PUSH TO ORIGIN!!!
-
+//* ******THE LONG HEIGHT THING IS HERE SOMEWHERE */
+// ITS SOMETHING TO DO WITH MEASURING THE HEIGHT
+//AND MAYBE MEDIA QUERIES
 let height = 0;
 let grid = document.getElementById('content');
 let bod = document.querySelector('body');
 let as = document.querySelectorAll('.yellowSquare');
 let main = document.querySelector('main');
-// let header = document.querySelector('header');
+// let header = document.querySelector('header'); 
 
 measure();
 resize();
@@ -47,6 +49,7 @@ window.addEventListener('load', function(){
     console.log(height)
 
 });
+//*******THE LONG HEIGHT THING IS HERE SOMEWHERE */
 
 
 //create variables from the link buttons
@@ -96,11 +99,8 @@ const buildEvents = (a, b, c) => {
 });
 }  
 
-//calling build events allows us to attach the relevant animations and http requests to the relevant buttons
 
-//mouse enter expands active element and shrinks the others
 buildEvents("mouseenter", "hoverThis", "hoverThem");
-//mouse leave shrinks active element and expands others
 buildEvents("mouseleave", "hoverOffThis", "hoverOffThem");
 buildEvents("mousedown", "clickThisAnimation", "clickThemAnimation");
 
@@ -108,3 +108,17 @@ buildEvents("mousedown", "clickThisAnimation", "clickThemAnimation");
 
 
 
+window.addEventListener('load', function(){
+
+    document.querySelectorAll('.backGround').forEach((element) =>{
+
+
+        console.log('cunt');
+        setTimeout(()=>{
+            element.style.animation='indexPageLoadAll 1s forwards';
+
+        }, 500)
+    
+    });
+
+});  
