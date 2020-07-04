@@ -9,9 +9,23 @@
 let height = 0;
 let grid = document.getElementById('content');
 let bod = document.querySelector('body');
-let as = document.querySelectorAll('.yellowSquare');
 let main = document.querySelector('main');
-// let header = document.querySelector('header'); 
+
+//this will be triggered on the buttons loading and will need tidying
+const buttonSetUp=()=>{
+    let as = document.querySelectorAll('.yellowSquare');
+    let button = document.querySelectorAll('.backGround');
+    let singleButton = document.querySelector('.backGround');
+
+    document.querySelectorAll('.backGround').forEach((element) =>{
+        console.log('cunt');
+        setTimeout(()=>{
+            element.style.animation='indexPageLoadAll 1s forwards';
+
+        }, 150)
+
+    });
+
 
 measure();
 resize();
@@ -38,13 +52,17 @@ window.addEventListener('resize', function(){
         resize();
         console.log(height)
 });
-
+//-- TRYING TO FIX LONG SQUARES I HAVE INCREASED THE TIMEOUT HERE- LOWERING IT MAKES IT WORSE
+//ALSO MAYBE LENGHTEN THE ANIMATION TIMEOUT OR DELAY, GIVING THE SQUARES TIME TO CHANGE
 window.addEventListener('load', function(){
     this.setTimeout(()=>{
-
         measure();
         resize();
-    },100)
+        setTimeout(()=>{
+            element.style.animation='indexPageLoadAll 1s forwards';
+
+        }, 500)
+    },150);
 
     console.log(height)
 
@@ -54,8 +72,7 @@ window.addEventListener('load', function(){
 
 //create variables from the link buttons
 
-    let button = document.querySelectorAll('.backGround');
-    let singleButton = document.querySelector('.backGround');
+
 
 //grab the width of the link/ button/ flex item    
     let buttonWidth = singleButton.clientWidth;
@@ -110,15 +127,11 @@ buildEvents("mousedown", "clickThisAnimation", "clickThemAnimation");
 
 window.addEventListener('load', function(){
 
-    document.querySelectorAll('.backGround').forEach((element) =>{
 
-
-        console.log('cunt');
-        setTimeout(()=>{
-            element.style.animation='indexPageLoadAll 1s forwards';
-
-        }, 500)
-    
-    });
 
 });  
+
+};
+
+
+

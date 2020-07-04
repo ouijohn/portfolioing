@@ -24,10 +24,10 @@ const getBits=()=>{
 
     setTimeout(()=>{
         buildHeaderEvents();
-    }, 200)
+    }, 1000) 
 }
-
-getBits();
+window.addEventListener('load', getBits)
+    // getBits();
 
 //add functionality to dropdown menu
 
@@ -56,4 +56,5 @@ console.log(a);
 }); 
 }
 }
+
 

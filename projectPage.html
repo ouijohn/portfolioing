@@ -11,35 +11,7 @@
         
         <section id="project">
 
-            <section class="rows">
-                <figure class='sectOne'>
-                    <img src="" alt="">
-                </figure>
-                <figcaption class="sectTwo">
-                    <p class="introduction">
 
-                    </p>
-                </figcaption>
-            </section>
-            <section class="rows">
-                <figcaption class="sectTwo">
-                    <p>
-                    </p>
-                </figcaption>
-                <figure class='sectOne'>
-                    
-                </figure>
-            </section>
-            <section class="rows">
-                <figure class='sectOne'>
-                </figure>
-            </section>
-            <section class="rows">
-                <figcaption class="sectTwo">
-                    <p>
-                    </p>
-                </figcaption>
-            </section>
 
             
 
@@ -48,6 +20,7 @@
     
 
         
+        <script src="js\fetchCall.js"></script>
 
         <script src="js\headsUp.js"></script>
         <script>
@@ -76,19 +49,20 @@
             }, 100)
 
             attachProjects = (a)=>{
-                
-                document.querySelector('.sectOne').innerHTML=`<img src="${a.image1}" alt="">`;
-                document.querySelector('.sectTwo p').innerHTML= ` ${a.introduction}`;
-                console.log(a.introduction);
-            };
-            class getInfo{
-                async get(url){
-                    const response = await fetch(url);
-                    const resData = await response.json();
-                    return resData;
+                let project = document.querySelector('#project')
+                let projectBits = a;
+                for(i=0; i < projectBits.length; i++){
+                    project.innerHTML+=`
+                                <article class='${a[i].title}'>
+                                    <figure><img src="${a[i].image1}" alt=""></figure>
+                                    <figcaption><p>${a[i].banter}</p></figcaption>
+                                </article>
+                            `   
                 }
 
-                }
+            
+            };
+
             
 
             const fetchProjects=(function(){
@@ -105,7 +79,6 @@
 
 
         </script>
-        <!-- <script src="js\portfolio.js"></script> -->
     </body>
     <style> 
         #bigYellowSquare{

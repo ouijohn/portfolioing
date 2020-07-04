@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+
+<script>
+
+// standrd module pattern
+// const UICtrl = (function(){
+//     let text = 'hello world';
+//         const changeText = function(){
+//         const element = document.querySelector('h1');
+//         element.textContent=text;
+//     }
+//     return{
+//         callChangeText: function(){
+//             changeText();
+//             console.log(text);
+//         }
+//     }
+
+// })();
+
+//revealing module pattern
+//start with an iffe
+
+const itemCtrl =(function(){
+
+})();
+
+
+//we will use a module for each thing/ method 
+//(almost what we have already been doing)
+//then an initializer that brings it all together
+//---in our case triggered by the window load once
+//will events etc be modules within modules?
+
+// IFFE = immedietlly invoked functional expresiion
+
+//BASIC EXAMPLE
+
+// (function(){
+// //declare private vars and functions
+
+// return{
+//     //return public vars and functions
+// }
+// })()
+</script>
+</body>
+</html>

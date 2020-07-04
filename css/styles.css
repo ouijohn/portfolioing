@@ -16,6 +16,10 @@ body{
 }
 /* javascript is helping keep the grid- and so the squares on proportion on resizing */
 /* it changes the css variable holding the  contents width as the screen size changes*/
+body{
+    margin: 0;
+    background-color: white;
+}
 #content{
     display: grid;
     width: 75%;
@@ -24,6 +28,7 @@ body{
     grid-gap: 1em;
     background-color: white;
     text-align: center;
+    z-index: 9000;
     /* scroll-snap-type: y proximity;
     overflow-y: scroll; */
 }
@@ -31,15 +36,20 @@ header{
     position: sticky;
     top: 0;
     z-index: 1000;
-    height: 15%;
+    height: 10%;
     width: 75%;
     margin: 0 auto;
+    margin-top: 1em;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     /* position: absolute; */
     /* grid-column: 1/ span 6; */
     vertical-align: text-bottom;
+    /* opacity: 0; */
+    
 }
+
+
 h1{
     color: black;
     font-size: 2.5em;
@@ -49,11 +59,14 @@ h1{
     font-family: 'DM Mono', monospace;
 }
 /* the navigation menu has a dropdown and a block version (do we really need both?) */
+#regular{
+    margin-top: 0.4em;;
+}
 nav{
     font-family: 'DM Mono', monospace;
     font-size: 2em;
     text-align: end;
-    padding-top: 2.5%;
+    /* padding-top: 2.5%; */
     padding-right: 0.75em;
     text-decoration: none;
 }
@@ -93,60 +106,66 @@ nav a{
     margin: auto;
     overflow: hidden;
 }
-/* .backGround:hover{
-    animation: hoverThis 1s;
-    DELETE THIS?
-} */
+
 .yellowSquare img{
     height: 100%;
     width: 100%;
     opacity: 0.1;
 } 
 #project{
-    display: grid;
+    /* display: grid; */
     width: 75%;
     margin: 0 auto;
-    grid-template-columns: repeat(6, 1fr);
     grid-gap: 1em;
     /* background-color: white; */
     text-align: center;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     scroll-snap-type: y mandatory;
 }
-.rows{
-    grid-column: 1/ span 6;
-    display: flex;
-    flex-direction: row;
-    /* height: 100vh; */
-    height: var(--productHeight);
+
+article{
+    display: grid;
+    height: 75%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin-top: 15%;
     scroll-snap-align: end;
-    margin-bottom: 10em;
+
+}
+article figure{
+    grid-column: 1/ span 8;
+    grid-row: 1/ span 1;
+    margin: 0;
+    margin-right: 0.5em;
 }
 
-.sectOne{
-    flex: 1;
-    margin: 0;
-    /* margin-top: 15%; */
-} 
-.sectOne img{
+article figure img{
     width: 100%;
 }
-.sectTwo{
-    flex: 1;
-    /* margin-top: 15%; */
+article figcaption{
+    grid-column: 9/ span 4;
+    grid-row: 1/ span 1;
+    height: 65%;
 }
-.sectTwo p{
+article:nth-child(odd) figure{
+    grid-column: 5/ span 8;
+    grid-row: 1/ span 1;
+    margin: 0;
+    margin-left: 0.5em;
+}
+article:nth-child(odd) figcaption{
+    grid-column: 1/ span 4;
+    grid-row: 1/ span 1;
+    height: 65%;
+}
+article figcaption p{
     color: black;
-    font-size: 2em;
+    font-size: 1em;
     margin: 0em;
-    margin-left: 1em;
     text-align: left;
     font-family: 'DM Mono', monospace;
 }
-.bigImage{
-    height: 100%;
-}
-
+/* we deleted some 'row' bits from here- check git if we need them*/
 
 
 
