@@ -166,7 +166,6 @@
        width: 0%;
        opacity: 0;
        height: 0%; 
-
     }
     40%{
         width: 95%;
@@ -176,7 +175,6 @@
         width: 85%;
         height: 85%;
         opacity: 1;
-
     }
 }
 @keyframes projectPageLoad {

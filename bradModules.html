@@ -30,8 +30,29 @@
 //start with an iffe
 
 const itemCtrl =(function(){
+    //use the _underScore, or at least understand why folks use it
+    //it signals a private variable
+    let _data = [];
+    function add(item){
+        _data.push(item);
+        console.log(`item added.....`);
+    }
+    function get(id){
+        return _data.find(item =>{
+            return item.id === id;
+        });
+    }
+        return{
+            add: add,
+            get: get
+        }
+    //remove get and we will not be able to get the object!   
+    //revealing mod directlly releases a method!!!!???
 
+    //revealing looks cleaner but is more limited
+    
 })();
+itemCtrl.add({id: 1, name: 'john'});
 
 
 //we will use a module for each thing/ method 
