@@ -11,20 +11,21 @@
 <script>
 
 // standrd module pattern
-// const UICtrl = (function(){
-//     let text = 'hello world';
-//         const changeText = function(){
-//         const element = document.querySelector('h1');
-//         element.textContent=text;
-//     }
-//     return{
-//         callChangeText: function(){
-//             changeText();
-//             console.log(text);
-//         }
-//     }
 
-// })();
+const UICtrl = (function(){
+    let text = 'hello world';
+        const changeText = function(){
+        const element = document.querySelector('h1');
+        element.textContent=text;
+    }
+    return{
+        callChangeText: function(){
+            changeText();
+            console.log(text);
+        }
+    }
+
+})();
 
 //revealing module pattern
 //start with an iffe

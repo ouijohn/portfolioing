@@ -6,7 +6,7 @@
 const  head = document.querySelector('head');
 const header = document.querySelector('header');
 
-const getBits=()=>{
+const getBits=(function() {
 
     
     const useBits =(a, b)=>{
@@ -25,8 +25,8 @@ const getBits=()=>{
     setTimeout(()=>{
         buildHeaderEvents();
     }, 1000) 
-}
-window.addEventListener('load', getBits)
+})();
+// window.addEventListener('load', getBits)
     // getBits();
 
 //add functionality to dropdown menu
@@ -45,7 +45,6 @@ if(downer.classList.contains('open')){
     dropMenu('Open');
     downer.classList.add('open');
 }
-
 });
 const dropMenu=(a)=>{
 console.log(a);
