@@ -17,14 +17,14 @@
 
 
         </section>
-    
-
-        
         <script src="js\fetchCall.js"></script>
+
+        <!-- <script src="js\index.js"></script> -->
+
+        <script src="js\headsUp.js"></script>
+
         <script src="js\portfolio.js"></script>
 
-        <script src="js\index.js"></script>
-        <script src="js\headsUp.js"></script>
         <script>
 
         //sort dropdown- make it less opaque- get rid of white bar at top
@@ -69,6 +69,7 @@
 
             const fetchProjects=(function(){
             let prjctNmbr = localStorage.getItem("projectNmbr")
+            console.log(prjctNmbr);
             const http = new getInfo;
             let projects;
             let docHead;
