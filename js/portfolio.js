@@ -7,7 +7,9 @@ const buttonSetUp=(function(){
     let main = document.querySelector('#content'); 
     let as = document.querySelectorAll('.yellowSquare');
     let buttons = document.querySelectorAll('.backGround');
+    let buttonImgs = document.querySelectorAll('.backGround img');
     let singleButton = document.querySelector('.backGround');
+
 
     const measure =  (function(){
         aHeight = as[0].getBoundingClientRect().width;
@@ -37,13 +39,14 @@ const buttonSetUp=(function(){
         setTimeout(()=>{
             measure();
             resize();
-            console.log(height);
+            buttonImgs.forEach((element)=>{
+                element.style.animation="indexPageImgLoad 1s 0.25s forwards"
+            })
         }, 500)
     //as before, set each module (meaure and resize) up either to return the function or set a listener inside them!
     window.addEventListener('resize', function(){
             measure();
             resize();
-            console.log(height)
     });
     //create variables from the link buttons
     //grab the width of the link/ button/ flex item    
@@ -90,6 +93,7 @@ const buttonSetUp=(function(){
     buttons.forEach((element) =>{
             element.style.animation='indexPageLoadAll 1s 0.25s forwards';
     });
+
 });  
 
 

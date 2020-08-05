@@ -6,19 +6,15 @@ const fetchButtons=(function(){
     let projectGetter = http.get('bits/projects.json')
         .then(data => data)
         .then(data => projects = data)
-        .then(data => console.log(data))
         .then(data => getYourButtonsOut.BUILD(projects))
         .then(data => buttonSetUp(data))
         .then(data => getYourButtonsOut.COLLECT(projects))
     })();
-    // setTimeout(()=>{})
-    // let yebutts = document.querySelectorAll('.yellowSquare')
-    
-
 //modular, self calling function that returns a method to build the ui and it's event handlers
 const getYourButtonsOut = (function(){
 
-        const buttonSetUp=()=>{
+    const buttonSetUp=()=>{
+
             let yebutts = document.querySelectorAll('.yellowSquare');
             console.log(yebutts);
             yebutts.forEach(function(a, index){
@@ -29,7 +25,6 @@ const getYourButtonsOut = (function(){
         }
 
         const buildBoxes=(a)=>{
-
                 const main = document.querySelector('#content');
                 let buttonInfo = a;
                 
@@ -71,3 +66,9 @@ const getYourButtonsOut = (function(){
 //         localStorage.setItem('projectNmbr', liveButtOn)
 //       });
 // };
+
+//target tester
+
+// document.querySelector('body').addEventListener('click',()=>{
+//     let target = event.target; console.log(target);
+// });

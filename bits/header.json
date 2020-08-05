@@ -1,6 +1,6 @@
 [    
     {
-        "header": "<h1>portfoliOUI</h1><nav id='downMenu'><div class='downer'><a><i class='fa fa-bars'></i></a></div><div id='downMenuText'><a href=''>work</a><a href=''>about</a><a href=''>contact</a></div></nav><nav id='regular'><a href=''>work</a><a href=''>about</a><a href=''>contact</a></nav>",
+        "header": "<h1>portfoliOUI</h1><nav id='downMenu'><div class='downer'><a><i class='fa-fa-bars'></i></a></div><div id='downMenuText'><a href=''>work</a><a href=''>about</a><a href=''>contact</a></div></nav><nav id='regular'><a href=''>work</a><a href=''>about</a><a href=''>contact</a></nav>",
         "testHeader": "<h1>OIOIOI</h1>",
         "documentHead": ["<link href='fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap' rel='stylesheet'>", "<meta name='viewport' content='width=device-width, initial-scale=1'>", "<link rel='stylesheet'href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>", "<link rel='stylesheet'href='css/animations.css'>", "<link rel='stylesheet'href='css/styles.css'>", "<link rel='stylesheet'href='css/mediaQueries.css'>"]
     }

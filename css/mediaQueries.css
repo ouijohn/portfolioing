@@ -1,77 +1,29 @@
 /* QUERIES FOR PROJECT PAGE! */
 
-@media only screen  and (max-width: 700px){
-
-    #project{
-        width: 95%;
-        align-content: center;
-    }
-    article{
-        width: 100%;
-        height: 90%;
-        margin: 0;
-        margin-bottom: 10em;
-
-    }
-    article:nth-child(odd) figure{
-        grid-row: 1/ span 1;
-        grid-column: 2/ span 10;
-        margin-left: 0em;
-    }
-    article:nth-child(odd) figcaption{
-        grid-row: 2/ span 1;
-        grid-column: 2/ span 10;
-        margin-top: -3em;
-    }
-    article:nth-child(even) figure{
-        grid-row: 1/ span 1;
-        grid-column: 2/ span 10;
-    }
-    article:nth-child(even) figcaption{
-        grid-row: 2/ span 1;
-        grid-column: 2/ span 10;
-        margin-top: -4em;
-    }
-    article figcaption p{
-        font-size: 1.35em;
-    }
-
-}
 
 
 
-@media only screen  and (max-width: 1100px){
 
 
-    article figcaption{
-        grid-row: 2/ span 1;
-    }
-    article figcaption p{
-        font-size: 1.5em;
-    }
-}
 
-@media only screen  and (min-width : 900px) {
+
+
+
+/* @media only screen  and (min-width : 900px) {
     h1{
         font-size: 4.1em;
     }
 
-    article figcaption p{
-        font-size: 1.75em;
-    }
-    article{
-        margin-top: 4em;
-    }
-}
-@media only screen  and (min-width : 1400px) {
+} */
+/* @media only screen  and (min-width : 1400px) {
     h1{
         font-size: 4.1em;
     }
     article figcaption p{
         font-size: 2em;
     }
-}
-@media only screen and (min-width: 1600px){
+} */
+/* @media only screen and (min-width: 1600px){
     article figcaption p{
         font-size: 2.2em;
     }
@@ -79,87 +31,296 @@
         margin-top: 2em;
         margin-bottom: 10em;
     }
-    
-}
+} */
 
 /* QUERIES FOR LANDING/ WORKS PAGE */
 
-@media only screen and (max-width: 1024px) and (min-height: 600px){
-    #content{
-        position: relative;
-        grid-template-columns: repeat(3, 1fr);
-        
-        
-        /* display: none; */
 
-    }
-}
-
-    @media only screen and (max-width: 1800px){
-        #content{
-        width: 75%;
-        margin-top: 2em;
-        }
-    
-
-    }
 
     /* HEADER - H1 AND NAV */
 
 
-    @media only screen  and (max-height : 899px) and (max-width: 700px){
 
 
+
+    /* 
+    @media only screen  and (min-width : 800px) {
         header{
-            display: grid;
-            width: 75%;
-            margin-left: 9.5%;
-    
-        }
-        nav{
-            display: flex;
-            height: 10em;
-            padding-right: 0.49em;
-        }
- 
-    
-        /* .downer{
-            opacity: 0.9;
-            height: 1em;
-            width: 100%;
-            margin: 0;
-            padding: 0.2em;
-    
-        } */
-
-        #downMenu{
-
-            margin-right: -1em;
-        }
-        #downMenuText{
-            display: flex;
-            flex-direction: column;
-        }
-        #downMenuText a{
-            margin-left: 0.2em;
-            text-align: left;
-            /* height: 0;
-            opacity: 0;
-            margin-top: 0; */
-            font-size: 0.85em;
-        }
-       .downer{
-        grid-row: 1/ span 1;
-        }
-        .downer a{
-            color: var(--icon);
-        }
-        h1{
-            font-size: 2em;
+            margin-left: 7.5em;
         }
     }
+    @media only screen  and (min-width : 1000px) {
+        h1{
+            font-size: 4.5em;
+        }
+        header{
+            margin-left: 8em;
+        }
+    }
+    @media only screen  and (min-width : 1200px) {
+        h1{
+            font-size: 4.1em;
+        }
+        header{
+            margin-left: 9.5em;
+        }
+    }
+    @media only screen  and (min-width : 1300px) {
+        h1{
+            font-size: 4.1em;
+        }
+        header{
+            margin-left: 10.5em;
+        }
+    }
+    @media only screen  and (min-width : 1475px) {
+        h1{
+            font-size: 4.1em;
+        }
+        header{
+            margin-left: 11.5em;
+        }
+    }
+    @media only screen  and (min-width : 1575px) {
+        h1{
+            font-size: 4.1em;
+        }
+        header{
+            margin-left: 12.5em;
+        }
+    }
+    @media only screen  and (min-width : 1800px) {
+        header{
+            margin-left: 14em;
+        }
+        h1{
+            font-size: 4.1em;
+        }
+    } */
 
-    @media only screen  and (max-height : 1400px) and (max-width: 1100px){
+ /* 400px */
+ @media only screen  and (max-width: 300px){
+
+
+    
+}
+@media only screen and (max-width: 400px){
+    #downMenuText{
+        font-size: 0.75em;
+    }
+
+    header{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .fa-bars{
+        font-size: 1em;
+    }
+    article figcaption p{
+        font-size: 1.8em;
+    }
+
+
+
+}
+ /* 500px */
+ @media only screen  and (max-width: 500px){
+    #project{
+        width: 93%;
+        align-content: center;
+        margin-top: -5%;
+    }
+    #content{
+        width: 100%;
+    }
+    h1{
+        font-size: 2.7em;
+    }
+    h2{
+        font-size: 2.1em;
+    }
+    article figcaption p{
+        font-size: 2.3em;
+    }
+  
+    article:first-child {
+        margin-top: 0%;
+    }
+    article:nth-last-child(2){
+    }
+    article:last-child{
+        margin-bottom: 10em;;
+    }
+    article{
+        width: 100%;
+        height: 85%;
+        margin: 0;
+        margin-top: 60%;
+    }
+ }
+
+
+
+
+ /* 600px */
+ @media only screen  and (max-width: 700px){
+
+    header{
+        width: 93%;
+        margin-left: 3.65%;
+    }
+    h1{
+        font-size: 3em;
+    }
+    /* .dDown{
+        font-size: 1em;
+    } */
+    article{
+        display: block;
+        margin-top: 4em;
+
+    }
+
+    #content{
+        width: 80%;
+        
+    }
+    figcaption{
+        font-size:  0.75em;
+        margin-top: 2em;
+    }
+
+    
+}
+
+@media only screen  and (min-width : 625px){
+    /* #content{
+        width: 82%;
+        margin-top: 2em;
+    } */
+    /* header{
+        width: 80%;
+        margin-left: 11%;
+    } */
+    /* h1{
+        font-size: 3.5em;
+    } */
+
+    #downMenu{
+        margin-right: -1.1em;
+    }
+    .dDown{
+        font-size: 1.25em;
+    }
+    nav{
+        display: flex;
+        height: 10em;
+        padding-right: 0em;
+    }
+    #downMenuText{
+        display: flex;
+        flex-direction: column;
+    }
+    #downMenuText a{
+        margin-left: 0.2em;
+        text-align: left;
+        font-size: 1em;
+    }
+   .downer{
+        grid-row: 1/ span 1;
+    }
+    .downer a{
+        color: var(--icon);
+    }
+
+}
+
+
+ /* 800px */
+ @media only screen  and (min-width: 800px) {
+    h1{
+        font-size: 4em;
+    }
+
+}
+@media only screen and (max-width: 800px){
+    
+    
+
+    /* h1{
+        font-size: 4.1em;
+    } */
+
+}
+
+ /* 900px */
+
+  @media only screen  and (max-width: 899px){
+
+    article:nth-child(odd) figure{
+        grid-row: 1/ span 1;
+        grid-column: 2/ span 10;
+        margin-left: 0;
+        
+    }
+    article:nth-child(odd) figcaption{
+        grid-row: 2/ span 1;
+        grid-column: 2/ span 10;
+       
+    }
+    article:nth-child(even) figure{
+        grid-row: 1/ span 1;
+        grid-column: 2/ span 10;
+        
+    }
+    article:nth-child(even) figcaption{
+        grid-row: 2/ span 1;
+        grid-column: 2/ span 10;
+        
+    }
+    article figcaption p{
+        /* font-size: 35em; */
+    }
+    .flexhibition{
+        margin-bottom: 0em;
+    }
+} 
+
+@media only screen and (min-width: 900px){
+    header{
+        width: 100%;
+        margin-left: 0;
+    }
+    h1{
+        margin-left: 5%;
+    }
+    .dDown{
+        margin-right: 5%;
+    }
+    #content{
+        width: 100%;
+    }
+    article{
+        /* grid-template-rows: 50% 10%; */
+        /* height: 100%; */
+        margin: 0;
+    }
+ }
+
+ /* 1000px */
+
+ /* @media only screen and (max-width: 1000px) and (min-height: 600px){ */
+@media only screen and (max-width: 899px){
+    #content{
+        position: relative;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+ /* 1100px */
+     /* @media only screen  and (max-height : 1400px) and (max-width: 1100px){ */
+     @media only screen  and  (max-width: 1100px){
 
         nav{
             display: flex;
@@ -181,7 +342,7 @@
             flex-direction: column;
             background-color: white;
             color: black;
-            grid-column: 5/ span 2;
+            grid-column: 4/ span 3;
             opacity: 0.9;
             height: 0em;
         }
@@ -197,15 +358,44 @@
             opacity: 0;
             margin-top: 0;
         }
-       
-        .downer a{
+       .downer a{
             opacity: 0.45;
             color: var(--icon);
         }
+        #content{
+            width: 96%;
+        }
 
     }
-    @media only screen  and (min-width : 1400px) {
-        h1{
-            font-size: 4.1em;
+    /* wait and see if we need a max height! */
+    @media only screen  and (max-width: 1100px){
+
+        article figcaption{
+            grid-row: 2/ span 1;
+            margin-bottom: -2;
+        }
+        article figcaption p{
+            /* font-size: 1.5em; */
         }
     }
+
+ /* 1200px */
+
+ /* 1300px */
+
+ /* 1400px */
+ @media only screen  and (min-width : 1400px) {
+    h1{
+        font-size: 4.1em;
+    }
+    article figcaption p{
+        /* font-size: 2em; */
+    }
+    /* article{
+        margin-top: 2.5em;
+        
+    } */
+}
+
+
+ /* 1500px */

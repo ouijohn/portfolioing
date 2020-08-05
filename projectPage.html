@@ -56,6 +56,7 @@
                 for(i=0; i < projectBits.length; i++){
                     project.innerHTML+=`
                                 <article class='${a[i].title}'>
+                                    <h2><b>a wee subhead</b></h2>
                                     <figure><img src="${a[i].image1}" alt=""></figure>
                                     <figcaption><p>${a[i].banter}</p></figcaption>
                                 </article>
@@ -68,15 +69,15 @@
             
 
             const fetchProjects=(function(){
-            let prjctNmbr = localStorage.getItem("projectNmbr")
-            console.log(prjctNmbr);
-            const http = new getInfo;
-            let projects;
-            let docHead;
-            let projectGetter = http.get('bits/projects.json')
-                .then(data => data)
-                .then(data => projects = data)
-                .then(data => attachProjects(projects[prjctNmbr]))
+                let prjctNmbr = localStorage.getItem("projectNmbr")
+                console.log(prjctNmbr);
+                const http = new getInfo;
+                let projects;
+                let docHead;
+                let projectGetter = http.get('bits/projects.json')
+                    .then(data => data)
+                    .then(data => projects = data)
+                    .then(data => attachProjects(projects[prjctNmbr]))
             });
 
 
@@ -93,20 +94,23 @@
             margin: 0;
             top: 0;
             animation: bigYellowStarter 1s forwards;
+            z-index: 5000;
+            display: none;
         }
         #project{
-            
             opacity: 0;
             animation: openProject 1s forwards;
         }
+
         @keyframes bigYellowStarter {
             1%{
-                opacity: 1;
-               
+                /* opacity: 1; */
+               z-index: 5000;
             }
             100%{
                 opacity: 0;
                 /* transform: scale(0); */
+                z-index: 5000;
             }
         }
         @keyframes openProject {

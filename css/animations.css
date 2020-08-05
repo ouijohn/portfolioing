@@ -124,6 +124,7 @@
     0%{
         width: 85%;
         height: 85%;
+        z-index: 9999;
     }
     50%{
         width: 95%;
@@ -135,6 +136,7 @@
         opacity: 1;
     }
    100%{
+        z-index: 10000;       
         width: 100%;
         height: 100%;
         transform-origin: center;
@@ -148,6 +150,7 @@
     0%{
         width: 85%;
         height: 85%;
+        z-index: 1;
     }
     50%{
         width: 95%;
@@ -158,6 +161,7 @@
         height: 25%;
         transform: scale(0.5);
         opacity: 0;
+        z-index: 1;
     }
 }
 /* something to do with measuring height/ measuring wdth to measure the squarness! */
@@ -177,11 +181,22 @@
         opacity: 1;
     }
 }
-@keyframes projectPageLoad {
-    
-}
-@keyframes projectPageLeave{
-
+@keyframes indexPageImgLoad{
+    0%{
+        width: 0%;
+        opacity: 0;
+        height: 0%; 
+     }
+     40%{
+         width: 102%;
+         height: 102%;
+         opacity: 0;
+    }
+     100%{
+         width: 100%;
+         height: 100%;
+         opacity: 0.2;
+     }   
 }
 
 /* remember snap scroll and glow on product page */
