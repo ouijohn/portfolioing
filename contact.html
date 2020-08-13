@@ -10,39 +10,107 @@
     <body>
     <header></header>
     <main>
+        <div id="bigYellowSquare"></div>
+
         <section>
-        <article id='ouiMe'>
+        <article id='contactMe'>
             <figcaption>
             <h1>interviews, informations, ideas or wee chats please get in touch</h1>
             </figcaption> 
         <form action="">
             <label for="">contacts</label>
-            <input type="text">
+            <input type="text" id="contacts">
             <label for="">thoughts?</label>
-            <input type="text">
-            <input type="submit" name="" id="">
+            <textarea name="" id="thoughts" cols="30" rows="10">tell me</textarea>
+            <input type="submit" name="bleugh" id="SUB" class=".yellowSquare" >
         </form>   
         </article>
     </section>
-
+    <a class="yellowSquare" href="javascript:setTimeout(()=>{window.location = 'projectPage.html' },500);">
+        <div class="backGround ">
+                    <!-- <img src= ${buttonInfo[i][0].image1} alt=""> -->
+              </div>
+        </a>
     </main>
     
     <style>
+        form{
+            z-index: 4;
+        }
+        #yellowSquare{
+            height: 10em;
+            width: 10em;
+        }
+        #contactMe{
+            font-family: var(--fontStylee);
+            z-index: 5;
 
-        #ouiMe figcaption h1{
-            font-size: 0.9em;
+        }
+        #contactMe figcaption{
+            grid-column: 1/ span 12;
+            margin-top: 0em;
+        }
+        #contactMe figcaption h1, form{
+            font-size: 1.15em;
+            margin-left: 1em;
         }
         form{
+            grid-column: 1/ span 10;
             grid-row: 2/ span 1;
             display: flex;
             flex-direction: column;
-            font-family: var(--fontStylee);
+            margin-top: 2em;
+            text-align: center;
         }
+        input{
+            margin-top: 1em;
+            margin-bottom: 1em;
+        }
+        label{
+            text-align: left;
+            font-size: 1.5em;
+        }
+        #contacts{
+            height: 2.5em;
+            border: solid var(--iconBar);
+            border-width: 0.15em;
+        }
+        #thoughts{
+            border-width: 0.15em;
+            border: solid var(--iconBar);
+
+        }
+        #SUB{
+            width: 5em;
+            height: 5em;
+            margin-left: 35%;
+            background-color: var(--buttons);
+            border: 0;
+            color: seashell;
+        }
+        
+        *:active{
+        text-decoration: none;
+        border-width: 0px;
+        /* color: white;
+        background-color: white; */
+    }
+
+    #thoughts:focus, #contacts:focus{
+        text-decoration: none;
+        /* color: white;
+        background-color: white; */
+        /* background-color: pink; */
+        border-style: solid;
+        border-color: yellow;
+        background-color: white;
+        border-width: 0.25em;
+    }
         
         
     
      </style>
         <script src="js\headsUp.js"></script>
-        <!-- <script src="js\portfolio.js"></script> -->
+        <script src="js\portfolio.js"></script>
     </body>
 </html>

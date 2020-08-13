@@ -3,19 +3,24 @@
 
 
 body{
-    width: 95%;
-    margin: 0%;
+    /* width: 95%; */
+    /* width of the body affects product page transition */
+    /* width: 100%; */
+    text-align: center;
 }
+
 
  @media only screen  and (min-width : 300px){
 
-    header{
+    
+    header, #ouiMe, #contactMe{
         width: 95%;
         margin-left: 2.5%;
+        z-index: 11;
     }
     h1{
         font-size: 2.5em;
-        color: yellow;
+        color: black;
     }
     h2{
         font-size: 2.2em;
@@ -37,7 +42,7 @@ body{
         opacity: 0.45;
         color: var(--icon);
         font-size: 0.65em;
-        margin-right: 0.4em;
+        margin-right: 0em;
     }
     #downMenu{
         display: flex;
@@ -47,6 +52,7 @@ body{
         grid-column: 4/ span 3;
         opacity: 0.9;
         height: 0em;
+        
     }
     #downMenuText{
         display: flex;
@@ -66,6 +72,10 @@ body{
         font-size: 0.75em;
     }
     #project{
+        z-index: 1;
+        width: 95%;
+    }
+    #project #ouiMe{
         width: 93%;
     }
     article figcaption p{
@@ -75,13 +85,13 @@ body{
     article:first-child {
         margin-top: 0%;
     }
-    article:nth-last-child(2){
-    }
+    /* article:nth-last-child(2){
+    } */
     article:last-child{
         margin-bottom: 10em;;
     }
     article{
-        width: 100%;
+        
         height: 65%;
         margin: 0;
         margin-top: 60%;
@@ -102,7 +112,6 @@ body{
     }
     #project{
         width: 93%;
-        align-content: center;
         margin-top: -5%;
     }
     h2{
@@ -118,26 +127,27 @@ body{
 
 @media only screen  and (min-width : 500px){
    
-    header{
+    header, #ouiMe, #contactMe{
         width: 92%;
+        margin-bottom: 1.2em;
 
     }
     h1{
-        font-size: 2.75em;
+        font-size: 2em;
         
     }
     .fa-bars{
-        margin-right: 0.75em;
+        margin-right: 0em;
     }
     .downer a{
         font-size: 0.65em;
-        margin-right: 0.4em;
+        margin-right: -0.75em;
         padding-top: 10em;
     }
     h2{
         width: 100%;
         grid-row: 1/ span 1;
-        font-size: 1.5em;
+        font-size: 1.3em;
         margin-top: 0em;
         grid-column: 1/ span 6;
     }
@@ -145,7 +155,8 @@ body{
         grid-column: 1/ span 4;
     }
     #downMenu{
-        margin-right: -1.1em;
+        margin-right: 0em;
+        
     }
     .dDown{
         font-size: 1.25em;
@@ -160,28 +171,43 @@ body{
         flex-direction: column;
         font-size: 1em;
     }
+    #downMenu{
+        /* margin-left: 5em; */
+        margin-right: -1em;
+    }
+    #downMenu a{
+        margin-right: 0.5em;
+    }
     #downMenuText a{
-        margin-left: 0.2em;
+        
         text-align: left;
         font-size: 1em;
+        
     }
    .downer{
         grid-row: 1/ span 1;
+        
     }
     .downer a{
         color: var(--icon);
+       
+        
     }
     #project{
         margin-top: 2%;
     }
     figcaption{
-        font-size: 1.1em;
+        font-size: 0.9em;
+        margin-top: 3em;
     }
     article{
         display: grid;
     }
     article:nth-child(even) h2{
         grid-column: 9/ span 5;
+    }
+    article:nth-child(odd) figure{
+        padding-left: 1em;
     }
 
 }
@@ -194,16 +220,17 @@ body{
         margin-top: 2em;
     }
     h1{
-        font-size: 4em;
+        font-size: 3em;
         margin-left: 0em;
     }
     h2{
-        font-size: 1.75em;
+        font-size: 1.65em;
+       
     }
 
     .downer a{
         font-size: 0.95em;
-        margin-right: 0.2em;
+        /* margin-right: 0.2em; */
     }
    
     /* #downMenuText{
@@ -216,19 +243,22 @@ body{
 }
 
 @media only screen and (min-width: 800px){
-    body{
+    /* body{
         width: 100%;
-    }
+    } */
     h1{
-        font-size: 3em;
+        font-size: 2.75em;
         margin-left: 0.25em;
     }
-    header{
+    header, #ouiMe, #contactMe{
         margin: 0%;
         margin-left: 4.1em;
         width: 80%;
         text-align: center;
-        margin-bottom: 2em;
+        margin-bottom: -1em;
+    }
+    #ouiMe, #contactMe{
+        margin-top: 2.5%;
     }
     #project{
         width: 80%;
@@ -236,14 +266,19 @@ body{
     }
     article{
         height: 50%;
+        
+    }
+    figcaption{
+        width: 95%;
     }
 
 }
 @media only screen and (min-width: 900px){
 
-    header{
+    header, #ouiMe, #contactMe{
         width: 95%;
         margin-left: 0%;
+        
     }
     h1{
         font-size: 3em;
@@ -261,17 +296,36 @@ body{
     }
     figcaption{
         font-size: 1.75em;
+        width: 100%;
     }
 }
-@media only screen  and (min-width : 1000px) {
+@media only screen  and (min-width : 1000px){
+
+    header{
+        z-index: 2;
+    }
+    header, #ouiMe, #contactMe{
+        width: 80%;
+        margin-left: 4.75em;
+       
+    }
+    #project{
+        width: 80%;
+    }
     article:first-child{
         margin-top: 10%;
     }
+    article:last-child{
+        margin-bottom: 75%
+    }
     article{
-        height: 2%;
+        height: 17.5%;
     }
     h1{
-        font-size: 5em;
+        font-size: 3.5em;
+    }
+    h2{
+        font-size: 2em;
     }
     #regular{
         display: flex;
@@ -280,26 +334,169 @@ body{
     .downer{
         display: none;
     }
+    figcaption{
+        font-size: 1.2em;
+    }
 }
     @media only screen  and (min-width : 1100px) {
-
+        
+        header, #ouiMe, #contactMe{
+            margin-left: 5.75em;
+        }
         h1{
-            font-size: 6em;
+            font-size: 4em;
         }
         h2{
-            font-size: 3.5em;
+            font-size: 2.5em;
         }
         nav{
-            font-size: 3em;
+            font-size: 2em;
         }
         figcaption{
-            font-size: 2.25em;
+            font-size: 1.5em;
         }
         article{
             height: 10%;
         }
         article:first-child{
-            margin-top: 5%;
+            margin-top: 7%;
+        }
+    }
+
+    @media only screen  and (min-width : 1200px) {
+        header, #ouiMe, #contactMe{
+            margin-left: 6.25em;
+        }
+        h1{
+            font-size: 5em;
+        }
+        h2{
+            font-size: 3em;
+        }
+        figcaption{
+            font-size: 1.75em;
+        }
+        nav{
+            font-size: 2.5em;
+        }
+    }
+    @media only screen  and (min-width : 1300px) {
+        header, #ouiMe, #contactMe{
+            margin-left: 7.25em;
+        }
+    }
+    @media only screen  and (min-width : 1500px) {
+        header, #ouiMe, #contactMe{
+            margin-left: 8em;
+        }
+        h1{
+            font-size: 6em;
+        }
+        nav{
+            font-size: 2.75em;
+        }
+        article:first-child{
+            margin-top: 10%;
+        }
+
+    }  
+    @media only screen  and (min-width : 1600px) {
+        figcaption{
+            font-size: 2em;
+        }
+        
+    } 
+    @media only screen  and (min-width : 1700px) {
+        h1{
+            font-size: 6.25em;
+        }
+        h2{
+            font-size: 3.5em;
+        }
+        nav{
+            font-size: 3.25em;
+        }
+
+    }
+    @media only screen  and (min-width : 1900px) {
+        header, #ouiMe, #contactMe{
+            margin-left: 9.25em;
+        }
+    }
+
+    /* TRYING TO GET RID OF BLUE FLASH ON LINK PUSH! */
+
+    *:link{
+        text-decoration: none;
+        /* color: white;
+        background-color: white; */
+    }
+    *:visited{
+        text-decoration: none;
+        /* color: white;
+        background-color: white; */
+    }
+    
+    *:hover{
+        text-decoration: none;
+        border-width: 0px;
+
+        /* color: white;
+        background-color: white; */
+    }
+    *:active{
+        text-decoration: none;
+        border-width: 0px;
+        /* color: white;
+        background-color: white; */
+    }
+
+    form:focus{
+        text-decoration: none;
+        /* color: white;
+        background-color: white; */
+        /* background-color: pink; */
+        border-style: solid;
+        border-color: yellow;
+        background-color: white;
+        border-width: 0.25em;
+    }
+
+
+    :target{
+        background-color: pink;
+        text-decoration: none;
+        text-emphasis: none;
+    }
+
+    /* QUERIES FOR GRID/ MENU */
+
+    @media only screen  and (min-width : 300px){
+        #content{
+            display: grid;
+            width: 96%;
+            margin: 0 auto;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0.1em;
+            
+        }
+        article{
+            text-align: center;
+
+        }
+    }
+    @media only screen and (min-width: 500px){
+        #content{
+            grid-template-columns: repeat(4, 1fr);
+
+
+        }
+    }
+    @media only screen and (min-width: 800px){
+        #content{
+            grid-template-columns: repeat(6, 1fr);
+            width: 82%;
+            margin-top: 2em;
         }
     }
 

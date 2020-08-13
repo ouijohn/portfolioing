@@ -122,49 +122,62 @@
 /* SHOULD THE FIRST 50% BE A 5? */
 @keyframes clickThisAnimation {
     0%{
-        width: 85%;
-        height: 85%;
+        width: 95%;
+        height: 95%;
         z-index: 9999;
     }
     50%{
-        width: 95%;
-        height: 95%;
+
     }
     50%{
-        width: 75%;
-        height: 75%;
-        opacity: 1;
+        /* width: 95%;
+        height: 95%;
+        opacity: 1; */
     }
    100%{
         z-index: 10000;       
-        width: 100%;
-        height: 100%;
+        width: 95%;
+        height: 95%;
         transform-origin: center;
         /* opacity: 0; */
-        transform: scale(7.5);
+        transform: scale(5);
         position: fixed;
     }
 }
+/* its doing it to ALL of them for some reason */
+@keyframes imageAnimation{
+    0%{
+        opacity: 0.2;
+        filter: blur(0px);
+
+    }
+    100%{
+        opacity: 0.2;
+        filter: blur(10px);
+    }
+}
+/* TRY AND SMOOTH THE TRANSITION OUT!!! */
 @keyframes clickThemAnimation {
 
     0%{
         width: 85%;
         height: 85%;
         z-index: 1;
+        opacity: 1;
     }
     50%{
-        width: 95%;
-        height: 95%;
+        /* width: 95%;
+        height: 95%; */
     }
     100%{
         width: 25%;
         height: 25%;
         transform: scale(0.5);
         opacity: 0;
-        z-index: 1;
+        z-index: 5;
     }
 }
-/* something to do with measuring height/ measuring wdth to measure the squarness! */
+/*measuring height/ measuring wdth to measure the squarness! */
 @keyframes indexPageLoadAll{
     0%{
        width: 0%;
@@ -183,22 +196,34 @@
 }
 @keyframes indexPageImgLoad{
     0%{
-        width: 0%;
+        /* width: 0%;
+        height: 0%;  */
         opacity: 0;
-        height: 0%; 
      }
      40%{
-         width: 102%;
-         height: 102%;
-         opacity: 0;
+         /* width: 122%;
+         height: 122%; */
+         /* opacity: 0; */
     }
      100%{
-         width: 100%;
-         height: 100%;
+         /* width: 100%;
+         height: 100%; */
          opacity: 0.2;
      }   
 }
-
+@keyframes bigYellowStarter {
+    1%{
+        opacity: 1;
+        z-index: 10;
+    }
+    100%{
+        opacity: 0;
+        /* transform: scale(0); */
+        z-index: 10;
+    }
+}
+/* IT IS BLOCK DISPLAY FOR THE 1SEC OF LOADING THEN NONE!!! */
+/* DISPLAY IS NOTNOTNOT ANIMATABLE!!! */
 /* remember snap scroll and glow on product page */
 
 

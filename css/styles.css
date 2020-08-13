@@ -5,6 +5,7 @@
     --iconBar: rgb(228, 235, 237, 0.85);
     --productHeight: 0;
     --fontStylee: 'DM Mono', monospace;
+    --buttons: rgb(240, 214, 50);
 }
 body{
     /* color: white; */
@@ -14,9 +15,11 @@ body{
     grid-template-rows: repeat(6, 1fr);
     margin-top: 1em;
     scroll-snap-type: y mandatory;
+    
 
 
 }
+
 /* javascript is helping keep the grid- and so the squares on proportion on resizing */
 /* it changes the css variable holding the  contents width as the screen size changes*/
 
@@ -29,14 +32,14 @@ body{
     grid-gap: 1em;
     /* background-color: white; */
     text-align: center;
-    z-index: 4000;
+    z-index: 5;
     /* scroll-snap-type: x proximity; */
     /* overflow-y: scroll; */
 }
 header{
     position: sticky;
     top: 0;
-    z-index: 9000;
+    z-index: 4;
     height: 10%;
     width: 75%;
     margin: 0 auto;
@@ -47,7 +50,6 @@ header{
     /* grid-column: 1/ span 6; */
     vertical-align: text-bottom;
     /* opacity: 0; */
-    
 }
 
 
@@ -58,6 +60,7 @@ h1{
     margin: 0em;
     text-align: left;
     font-family: var(--fontStylee);
+    height: 1em;
 }
 
     h2{
@@ -70,6 +73,7 @@ h1{
 /* the navigation menu has a dropdown and a block version (do we really need both?) */
 #regular{
     margin-top: 0.4em;
+    height: 1em;
 }
 nav{
     font-family: var(--fontStylee);
@@ -78,15 +82,17 @@ nav{
     /* padding-top: 2.5%; */
     padding-right: 0.75em;
     text-decoration: none;
-    z-index: 8000;
 }
 nav a{
     text-decoration: none;
     color: black;
 }
+nav a:link{
+    text-decoration: none;
+    
+}
 #downMenu{
     display: none;
-    z-index: 9999;
 }
 #regular{
     display: flex;
@@ -105,14 +111,16 @@ nav a{
     margin: 0;
     height: var(--squareWidth);
     width: 100%;
+    text-decoration: none;
     /* background-color: white; */
     text-align: center;
     align-content: center;
-    z-index: 9000;
+    /* z-index: 11; */
 }
+
 .backGround{
     width: 0%;
-    background-color: rgb(240, 214, 50);
+    background-color: var(--buttons);
     border: none;
     margin: auto;
     overflow: hidden;
@@ -138,7 +146,7 @@ article{
     /* height: 100%; */
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    scroll-snap-align: center;
+    scroll-snap-align: bottom;
 }
 article figure{
     grid-column: 1/ span 8;
@@ -162,11 +170,11 @@ article:nth-child(odd) figure{
     grid-column: 5/ span 8;
     grid-row: 1/ span 1;
     margin-right: 1em;
-    
 }
 article:nth-child(odd) figcaption{
     grid-column: 1/ span 4;
     grid-row: 1/ span 1;
+    
    
 }
 article:nth-child(even) figure{
@@ -190,47 +198,37 @@ article figcaption p{
     text-align: left;
     font-family: var(--fontStylee);
 }
-/* we deleted some 'row' bits from here- check git if we need them*/
+
+/* flash trans mation */
+#bigYellowSquare{
+    background-color: rgb(240, 214, 50);
+    width: 120%;
+    height: 120%;
+    position: fixed;
+    opacity: 1;
+    margin: 0;
+    top: 0;
+    z-index: 1;
+    display: block;
+    animation: bigYellowStarter 1s forwards;
+
+}
+#project{
+    opacity: 0;
+    animation: openProject 1s forwards;
+}
 
 
-/* ABOUT PAGE STYLEES */
+@keyframes openProject {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 
-/* #ouiMe{
-    font-size: 3em;
-    width: 75%;
-    margin-left: 12.5%;
-    text-align: left;
-    margin-top: 0em;
- }
- #ouiMe figcaption{
-     margin-top: 1em;
-     color: pink;
-     grid-column: 1/ span 9;
- }
- #ouiMe figcaption p{
-     color: pink;
-     font-size: 0.75em;
- }
- @media only screen  and (max-width : 800px){
-     #ouiMe figcaption{
-         grid-column: 1/ span 10;
+}
 
-         grid-row: 1/ span 1;
-     }
-     #ouiMe figcaption p{
-         color: pink;
-         font-size: 0.65em;
-         grid-row: 1/ span 1;
-     }
- }
- @media only screen  and (max-width : 500px){
-     #ouiMe figcaption{
-         color: pink;
-         font-size: 0.45em;
-     }
-     #ouiMe figcaption p{
-         color: pink;
-         font-size: 1em;
-     }
- } */
+
+
 

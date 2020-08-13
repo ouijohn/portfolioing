@@ -24,8 +24,13 @@ const getBits=(function() {
 
     setTimeout(()=>{
         buildHeaderEvents();
+        //this wee extra bit deals with the yellow flash on an off load - ensuring the square doesnt block the page
+        bigYellowSquare.style.display='none'
+        console.log('it worked?')
     }, 1000) 
 })();
+
+
 // window.addEventListener('load', getBits)
     // getBits();
 

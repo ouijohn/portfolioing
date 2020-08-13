@@ -23,7 +23,7 @@ const getYourButtonsOut = (function(){
                 })
             })
         }
-
+// TRY ADDING A DELAY TO THIS TO ELIMINATE FLASH!!!
         const buildBoxes=(a)=>{
                 const main = document.querySelector('#content');
                 let buttonInfo = a;

@@ -27,17 +27,6 @@
 
         <script>
 
-        //sort dropdown- make it less opaque- get rid of white bar at top
-        //create opening animation! (boxes fade in the images appear)
-        //stop images flashing up on index load
-        //think of a way to stop the images becomeing all horrible and fuzzy as yo  
-        //GET/ FETCH PROJECT JSON !!!
-        //PUT THE OBJECT NAME IN THE INNERHTML IN TEMP LITS THEN STICK IN THE LOCAL STORAGE NUMBER! 
-        //THE ABOVE WILL HELP US KNOW WHICH PROJECT TO FETCH!
-        //have a look at revealing module and how to maybe apply it to this
-        //form + about page
-        //tidy up 
-
                 let root = document.documentElement;
                 let rowRow = document.querySelectorAll('.rows')
                 let prjctNmbr = 0;
@@ -85,43 +74,7 @@
         </script>
     </body>
     <style> 
-        #bigYellowSquare{
-            background-color: rgb(240, 214, 50);
-            width: 100%;
-            height: 100%;
-            position: fixed;
-            opacity: 1;
-            margin: 0;
-            top: 0;
-            animation: bigYellowStarter 1s forwards;
-            z-index: 5000;
-            display: none;
-        }
-        #project{
-            opacity: 0;
-            animation: openProject 1s forwards;
-        }
 
-        @keyframes bigYellowStarter {
-            1%{
-                /* opacity: 1; */
-               z-index: 5000;
-            }
-            100%{
-                opacity: 0;
-                /* transform: scale(0); */
-                z-index: 5000;
-            }
-        }
-        @keyframes openProject {
-            0%{
-                opacity: 0;
-            }
-            100%{
-                opacity: 1;
-            }
-
-        }
         
 
    </style>

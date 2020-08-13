@@ -9,6 +9,7 @@ const buttonSetUp=(function(){
     let buttons = document.querySelectorAll('.backGround');
     let buttonImgs = document.querySelectorAll('.backGround img');
     let singleButton = document.querySelector('.backGround');
+    const bigYellowSquare = document.querySelector('#bigYellowSquare')
 
 
     const measure =  (function(){
@@ -40,7 +41,8 @@ const buttonSetUp=(function(){
             measure();
             resize();
             buttonImgs.forEach((element)=>{
-                element.style.animation="indexPageImgLoad 1s 0.25s forwards"
+                element.style.animation="indexPageImgLoad 0.5s 0.25s forwards"
+                
             })
         }, 500)
     //as before, set each module (meaure and resize) up either to return the function or set a listener inside them!
@@ -60,9 +62,12 @@ const buttonSetUp=(function(){
             c.style.animation = a + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
     //call filter function using 'this' and asign variable
             filteredButtons = filtered(c);
+            console.log(c);
+            
     //apply chosen animation to each filtered element
             filteredButtons.forEach(element =>{
-                element.style.animation = b  + ' 0.5s cubic-bezier(0,0,0.58, 1) forwards';
+                element.style.animation = b  + ' 1s cubic-bezier(0,0,0.58, 1) forwards';
+                // element.children[0] 
             }); 
     }
     //animating events allows us to attach events to elements and trigger relevant animations/ http requests
@@ -75,8 +80,10 @@ const buttonSetUp=(function(){
                 element.addEventListener(a, function(){
                 //calling the buttonAnimations here attaches relevant animations to the relevant events         
                 buttonAnimations(b, c, this);
-                    console.log(a, b, this);
-                });
+                if(a === 'mousedown'){
+                    element.children[0].style.animation='imageAnimation 2s forwards'
+                }
+        });
                 const loadSquares = (function(){
                 setTimeout(()=>{
                     this.measure();
@@ -87,8 +94,12 @@ const buttonSetUp=(function(){
 }  
     buildEvents("mouseenter", "hoverThis", "hoverThem");
     buildEvents("mouseleave", "hoverOffThis", "hoverOffThem");
+    // buildEvents('mousedown', 'imageAnimation', 'imageAnimation')
     buildEvents("mousedown", "clickThisAnimation", "clickThemAnimation");
     buildEvents("load", "loadSquares", "loadSquares");
+    
+
+
     //**********MAYBE HERE BUT JUST DELAY THE ANIMATION?????????
     buttons.forEach((element) =>{
             element.style.animation='indexPageLoadAll 1s 0.25s forwards';
